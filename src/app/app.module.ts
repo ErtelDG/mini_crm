@@ -17,6 +17,21 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
+
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
+import { AngularFireModule } from '@angular/fire/compat';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyBlBUHuZZb7Ry_m9G_c9ZJ-aW-PHjewauI',
+  authDomain: 'mini-crm-f7430.firebaseapp.com',
+  projectId: 'mini-crm-f7430',
+  storageBucket: 'mini-crm-f7430.appspot.com',
+  messagingSenderId: '60679508947',
+  appId: '1:60679508947:web:6a604801ee2f9ba5395526',
+};
 
 @NgModule({
   declarations: [
@@ -39,6 +54,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    FormsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mini-crm-f7430": {
+      "hosting": {
+        "mini_crm": [
+          "mini-crm-f7430"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mini-crm-f7430"
+  }
+}

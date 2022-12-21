@@ -99,6 +99,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "mini_crm:build:production",
+            "firebaseProject": "mini-crm-f7430",
+            "firebaseHostingSite": "mini-crm-f7430"
+          }
         }
       }
     }
