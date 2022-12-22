@@ -1,9 +1,9 @@
 <mat-drawer-container class="mat-draw-container" autosize>
   <mat-drawer #drawer class="sidenav" [opened]="true" mode="side">
-    <div class="logo-container"> Plaz fuer Logos</div>
+    <img class="w-full h-16 object-scale-down" src="assets/img/logo_mini_crm.png" alt="">
     <ul class="menu-items">
       <li [routerLink]="['/']"><mat-icon>fact_check</mat-icon> Dashboard</li>
-      <li [routerLink]="['/users']"><mat-icon>perm_identity</mat-icon>User</li>
+      <li [routerLink]="['/user']"><mat-icon>perm_identity</mat-icon>User</li>
 
     </ul>
   </mat-drawer>
@@ -16,7 +16,7 @@
       </mat-toolbar-row>
     </mat-toolbar>
 
-    <div class="router-container">
+    <div class="pl-8 pr-8 pt-4">
       <router-outlet></router-outlet>
     </div>
 

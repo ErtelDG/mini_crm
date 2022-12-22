@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 
 @Component({
@@ -12,7 +13,10 @@ export class DialogAddUserComponent {
   birthDate!: Date;
   loading = false;
 
-  constructor(private firestore: AngularFirestore) {}
+  constructor(
+    public dialogRef: MatDialogRef<DialogAddUserComponent>,
+    private firestore: AngularFirestore
+  ) {}
 
   saveUser() {
     this.user.birthDate = this.birthDate.getTime();
@@ -25,6 +29,7 @@ export class DialogAddUserComponent {
       .then((result: any) => {
         console.log('adding user finish', result);
         this.loading = false;
+        this.dialogRef.close();
       });
   }
 }

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog } from '@angular/material/dialog';
-import { User } from 'src/models/user.class';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
 
 @Component({
@@ -8,10 +8,22 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
 })
-export class UserComponent {
-  
+export class UserComponent implements OnInit {
+  constructor(public dialog: MatDialog, private firestore: AngularFirestore) {}
 
-  constructor(public dialog: MatDialog) {}
+  allUsers: any;
+
+  ngOnInit(): void {
+
+
+    this.firestore
+      .collection('users')
+      .valueChanges({ idField: 'customIdName' })//get user id
+      .subscribe((changes: any) => {
+        this.allUsers = changes;
+        console.log(this.allUsers);
+      });
+  }
 
   position: any;
 

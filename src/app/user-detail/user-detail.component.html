@@ -1,0 +1,41 @@
+<div class="h-72 flex flex-col-reverse bg-blue-200 mb-8 rounded-2xl shadow-lg relative">
+
+  <div class="absolute top-2 right-2">
+    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon"
+      [matMenuTriggerFor]="menuAddress">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menuAddress="matMenu">
+      <button mat-menu-item (click)="editUserDetail()">Edit</button>
+    </mat-menu>
+  </div>
+
+  <div class="flex">
+    <img class="h-20 w-20 m-4 object-cover rounded-full" src="assets/img/blank-profile-picture.png">
+    <div class="flex flex-col justify-center gap-y-2">
+      <div class="text-base">{{ this.user.lastName }} {{ this.user.firstName }}</div>
+      <div class="text-sm">{{ this.user.email }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="rounded-2xl shadow-lg p-4 gap-y-4 relative">
+
+  <mat-card-title>Address</mat-card-title>
+  <div class="absolute top-2 right-2">
+    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon"
+      [matMenuTriggerFor]="menuAddress">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <!-- [matMenuTriggerFor]="menu" bei button ruft id #menu auf -->
+    <mat-menu #menuAddress="matMenu">
+      <button mat-menu-item (click)="editMenu()">Edit</button>
+    </mat-menu>
+  </div>
+  <mat-card-content>
+    <div></div>
+    <div></div>
+    {{ this.user.street}}<br>
+    {{ this.user.zipCode}} {{ this.user.city }}
+  </mat-card-content>
+</div>
