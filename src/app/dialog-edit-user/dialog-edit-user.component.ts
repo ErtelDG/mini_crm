@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 
 @Component({
@@ -7,12 +7,10 @@ import { User } from 'src/models/user.class';
   templateUrl: './dialog-edit-user.component.html',
   styleUrls: ['./dialog-edit-user.component.scss'],
 })
-export class DialogEditUserComponent implements OnInit {
+export class DialogEditUserComponent {
   user!: User;
 
   constructor(public dialogRef: MatDialogRef<DialogEditUserComponent>) {}
-
-  ngOnInit(): void {}
 
   loading = false;
 
