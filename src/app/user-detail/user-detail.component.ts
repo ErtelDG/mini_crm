@@ -47,8 +47,10 @@ export class UserDetailComponent implements OnInit {
 
     //welche component übergeben werden soll
     const dialog = this.dialog.open(DialogEditAddressComponent);
-    //daten welche übergeben werden sollen und wo diese in der aufrufenden component gespeichert werden soll
+    //daten welche übergeben werden sollen und wo diese in der aufrufenden component gespeichert werden soll, hier der komplette user
     dialog.componentInstance.user = new User(this.user.toJSON());
+    //und hier wird die variable user id übergeben:
+    dialog.componentInstance.userId = this.userID;
   }
 
   editUserDetail() {
@@ -56,7 +58,9 @@ export class UserDetailComponent implements OnInit {
 
     //welche component übergeben werden soll
     const dialog = this.dialog.open(DialogEditUserComponent);
-    //daten welche übergeben werden sollen und wo diese in der aufrufenden component gespeichert werden soll
+    //daten welche übergeben werden sollen und wo diese in der aufrufenden component gespeichert werden soll, hier der komplette user
     dialog.componentInstance.user = new User(this.user.toJSON());
+    //und hier wird die variable user id übergeben:
+    dialog.componentInstance.userId = this.userID;
   }
 }
