@@ -27,6 +27,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { ActivatedRoute } from '@angular/router';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBlBUHuZZb7Ry_m9G_c9ZJ-aW-PHjewauI',

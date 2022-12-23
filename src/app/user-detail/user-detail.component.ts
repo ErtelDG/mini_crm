@@ -41,11 +41,15 @@ export class UserDetailComponent implements OnInit {
       });
   }
 
-  editMenu() {
-    this.dialog.open(DialogEditAddressComponent);
+  editUserAddress() {
+    let dialog = this.dialog.open(DialogEditAddressComponent);
+
+    dialog.componentInstance.user = this.user;
   }
 
   editUserDetail() {
-    this.dialog.open(DialogEditUserComponent);
+    let dialog = this.dialog.open(DialogEditUserComponent);
+
+    dialog.componentInstance.user = this.user;
   }
 }
