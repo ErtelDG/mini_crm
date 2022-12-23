@@ -9,6 +9,7 @@ import { User } from 'src/models/user.class';
 })
 export class DialogEditUserComponent {
   user!: User;
+  birthDate!: Date;
 
   constructor(public dialogRef: MatDialogRef<DialogEditUserComponent>) {}
 
